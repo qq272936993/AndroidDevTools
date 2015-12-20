@@ -7,19 +7,29 @@ import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 import android.util.Log;
 
+
+
+/**
+ * 功能描述:图片内存缓存
+ * 		尽量不要自己创建,请使用ImageManager管理
+ * */
 public class ImageMemoryCache {
 
 	private final String TAG = "ImageMemoryCache";
 	
-	private static LruCache<String , Bitmap> mLruCache;	//强引用缓存
+	private LruCache<String , Bitmap> mLruCache;	//强引用缓存
 	
-	private static LinkedHashMap<String, SoftReference<Bitmap>> mSoftCache;
+	private LinkedHashMap<String, SoftReference<Bitmap>> mSoftCache;
 	
 	private static final int LRU_CACHE_SIZE = 4 * 1024 * 1024;
 	
 	private static final int SOFT_CACHE_NUM = 20;	//软引用个数
 	
 	
+	/**
+	 * 每次创建这个对象都会开闭一个新的内存区域,建议使用单例模式
+	 * 
+	 * */
 	public ImageMemoryCache(){
 		mLruCache = new LruCache<String, Bitmap>(LRU_CACHE_SIZE){
 			
