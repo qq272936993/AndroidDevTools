@@ -8,7 +8,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.EditText;
-import com.yws.android.dev.R;
+import pers.yangws.androiddevtools.R;
 
 public class EditTextWithDel extends EditText{
 
@@ -31,8 +31,8 @@ public class EditTextWithDel extends EditText{
 	}
 	
 	public void init(){
-		imgInable = getResources().getDrawable(R.drawable.delete_gray);
-		imgAble = getResources().getDrawable(R.drawable.delete);
+		imgInable = getResources().getDrawable(R.mipmap.delete_gray);
+		imgAble = getResources().getDrawable(R.mipmap.delete);
 		
 		this.addTextChangedListener(new TextWatcher() {
 			
