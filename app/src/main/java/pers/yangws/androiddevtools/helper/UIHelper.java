@@ -26,7 +26,7 @@ public class UIHelper {
 
 	/**
 	 * EditText显示键盘
-	 * @param editText 文本框主键
+	 * @param view 文本框主键
 	 * */
 	public static void showKeyboard(View view){
 		if(view == null) return;
@@ -40,7 +40,7 @@ public class UIHelper {
 	
 	/**
 	 * 隐藏键盘
-	 * @param editText
+	 * @param view
 	 * */
 	public static void hideKeyboard(View view){
 		if(view == null) return;

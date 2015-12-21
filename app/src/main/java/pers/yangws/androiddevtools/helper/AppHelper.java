@@ -67,7 +67,7 @@ public class AppHelper {
 	/**
 	 * 是否是顶层的Activity
 	 * 
-	 * @param actName
+	 * @param actNames
 	 * @param context
 	 * */
 	public static boolean isTopActivity(List<String> actNames, Context context) {

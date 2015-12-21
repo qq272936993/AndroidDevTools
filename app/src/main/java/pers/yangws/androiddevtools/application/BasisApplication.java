@@ -52,7 +52,7 @@ public class BasisApplication extends Application{
 	    //android.os.Process.myTid()获取到调用线程的id
 		mMainTheadId = android.os.Process.myTid();
 		
-		mSp = getSharedPreferences(Constants.sp.SP_NAME, Context.MODE_PRIVATE);
+		mSp = getSharedPreferences(Constants.Sp.SP_NAME, Context.MODE_PRIVATE);
 		
 		Thread.setDefaultUncaughtExceptionHandler(new ExceptionFilterHandler());
 	}

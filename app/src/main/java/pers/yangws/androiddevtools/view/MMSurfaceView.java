@@ -69,7 +69,7 @@ public class MMSurfaceView extends SurfaceView
 	
 	/**
 	 * 是否静音
-	 * @param isMute
+	 * @param isMute true(静音)/false(非静音)
 	 * */
 	public void setIsMute(boolean isMute){
 		this.isMute = isMute;
