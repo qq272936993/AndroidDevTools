@@ -17,7 +17,8 @@ public class CustomDialog {
 	
 	public static WindowManager.LayoutParams getDefaultLayoutParams(){
 		 WindowManager.LayoutParams sysParams= new WindowManager.LayoutParams();
-		 WindowManager.LayoutParams params = sysParams;
+		 
+         owManager.LayoutParams params = sysParams;
          params.height = WindowManager.LayoutParams.WRAP_CONTENT;
          params.width = WindowManager.LayoutParams.WRAP_CONTENT;
          params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE

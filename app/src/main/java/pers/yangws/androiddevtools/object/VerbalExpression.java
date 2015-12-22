@@ -5,24 +5,26 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
 import static java.lang.String.valueOf;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 /**
  * <pre>
- * 文件名称: 
- * 包路径:  
- * 描述:	 
+ * 文件名称:
+ * 包路径:
+ * 描述:
  *      一个正则表达式帮助库，可以让你很容易的构造复杂的正则表达式
  * 如果不知道如何使用请查看github中的JavaVerbalExpressions项目.
- * 
- * 内容摘要 
+ *
+ * 内容摘要
  *    作者: 杨文松
  *    版本: 1.0
- *    时间: 
+ *    时间:
  *    邮箱: 272936993@qq.com
- * 修改历史:  
+ * 修改历史:
  * 修改日期           修改人员        版本	       修改内容  		说明
- * ---------------------------------------------- 
+ * ----------------------------------------------
  *
  * </pre>
  */
@@ -198,12 +200,12 @@ public class VerbalExpression {
          * The following matches all names that have a prefix or not.
          * VerbalExpression.Builder namePrefix = regex().oneOf("Mr.", "Ms.");
          * VerbalExpression name = regex()
-         *	.maybe(namePrefix)
-         *	.space()
-         *	.zeroOrMore()
-         *	.word()
-         *	.oneOrMore()
-         *	.build();
+         * .maybe(namePrefix)
+         * .space()
+         * .zeroOrMore()
+         * .word()
+         * .oneOrMore()
+         * .build();
          * regex.test("Mr. Bond/")    //true
          * regex.test("James")   //true
          *
@@ -569,7 +571,7 @@ public class VerbalExpression {
 
         /**
          * Add a alternative expression to be matched
-         *
+         * <p/>
          * Issue #32
          *
          * @param pValue - the string to be looked for
@@ -601,14 +603,14 @@ public class VerbalExpression {
          * @since 1.3
          */
         public Builder oneOf(final String... pValues) {
-            if(pValues != null && pValues.length > 0) {
+            if (pValues != null && pValues.length > 0) {
                 this.add("(?:");
-                for(int i = 0; i < pValues.length; i++) {
+                for (int i = 0; i < pValues.length; i++) {
                     String value = pValues[i];
                     this.add("(?:");
                     this.add(value);
                     this.add(")");
-                    if(i < pValues.length - 1) {
+                    if (i < pValues.length - 1) {
                         this.add("|");
                     }
                 }
@@ -696,7 +698,7 @@ public class VerbalExpression {
     }
 
     /**
-     * Use builder {@link #regex()} 
+     * Use builder {@link #regex()}
      * to create new instance of VerbalExpression
      *
      * @param pattern - {@link java.util.regex.Pattern} that constructed by builder
@@ -795,7 +797,6 @@ public class VerbalExpression {
     public static Builder regex() {
         return new Builder();
     }
-    
-    
-    
+
+
 }

@@ -26,24 +26,23 @@ import pers.yangws.androiddevtools.object.HighLight;
 
 /**
  * <pre>
- * 文件名称: 
- * 包路径:  
- * 描述:	 
+ * 文件名称:
+ * 包路径:
+ * 描述:
  *      首次进入APP界面相关功能界面屏蔽提示,不明白可看HightLight
- *  
- * 内容摘要 
+ *
+ * 内容摘要
  *    作者: 杨文松
  *    版本: 1.0
- *    时间: 
+ *    时间:
  *    邮箱: 272936993@qq.com
- * 修改历史:  
+ * 修改历史:
  * 修改日期           修改人员        版本	       修改内容  		说明
- * ---------------------------------------------- 
+ * ----------------------------------------------
  *
  * </pre>
  */
-public class HightLightView extends FrameLayout
-{
+public class HightLightView extends FrameLayout {
     private static final int DEFAULT_WIDTH_BLUR = 15;
     private static final int DEFAULT_RADIUS = 6;
     private static final PorterDuffXfermode MODE_DST_OUT = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
@@ -59,8 +58,7 @@ public class HightLightView extends FrameLayout
     private int maskColor = 0xCC000000;
 
 
-    public HightLightView(Context context, HighLight highLight, int maskColor, boolean isBlur, List<HighLight.ViewPosInfo> viewRects)
-    {
+    public HightLightView(Context context, HighLight highLight, int maskColor, boolean isBlur, List<HighLight.ViewPosInfo> viewRects) {
         super(context);
         mHighLight = highLight;
         mInflater = LayoutInflater.from(context);
@@ -71,8 +69,7 @@ public class HightLightView extends FrameLayout
         init();
     }
 
-    private void init()
-    {
+    private void init() {
         mPaint = new Paint();
         mPaint.setDither(true);
         mPaint.setAntiAlias(true);
@@ -85,10 +82,8 @@ public class HightLightView extends FrameLayout
 
     }
 
-    private void addViewForTip()
-    {
-        for (HighLight.ViewPosInfo viewPosInfo : mViewRects)
-        {
+    private void addViewForTip() {
+        for (HighLight.ViewPosInfo viewPosInfo : mViewRects) {
             View view = mInflater.inflate(viewPosInfo.layoutId, this, false);
             FrameLayout.LayoutParams lp = buildTipLayoutParams(view, viewPosInfo);
 
@@ -99,30 +94,26 @@ public class HightLightView extends FrameLayout
             lp.rightMargin = (int) viewPosInfo.marginInfo.rightMargin;
             lp.bottomMargin = (int) viewPosInfo.marginInfo.bottomMargin;
 
-            if (lp.leftMargin == 0 && lp.topMargin == 0)
-            {
+            if (lp.leftMargin == 0 && lp.topMargin == 0) {
                 lp.gravity = Gravity.RIGHT | Gravity.BOTTOM;
             }
             addView(view, lp);
         }
     }
 
-    private void buildMask()
-    {
+    private void buildMask() {
         mMaskBitmap = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(mMaskBitmap);
         canvas.drawColor(maskColor);
         mPaint.setXfermode(MODE_DST_OUT);
         mHighLight.updateInfo();
-        for (HighLight.ViewPosInfo viewPosInfo : mViewRects)
-        {
+        for (HighLight.ViewPosInfo viewPosInfo : mViewRects) {
             canvas.drawRoundRect(viewPosInfo.rectF, DEFAULT_RADIUS, DEFAULT_RADIUS, mPaint);
         }
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
-    {
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
 
@@ -134,21 +125,17 @@ public class HightLightView extends FrameLayout
     }
 
     @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom)
-    {
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        if (changed)
-        {
+        if (changed) {
             buildMask();
             updateTipPos();
         }
 
     }
 
-    private void updateTipPos()
-    {
-        for (int i = 0, n = getChildCount(); i < n; i++)
-        {
+    private void updateTipPos() {
+        for (int i = 0, n = getChildCount(); i < n; i++) {
             View view = getChildAt(i);
             HighLight.ViewPosInfo viewPosInfo = mViewRects.get(i);
 
@@ -158,8 +145,7 @@ public class HightLightView extends FrameLayout
         }
     }
 
-    private LayoutParams buildTipLayoutParams(View view, HighLight.ViewPosInfo viewPosInfo)
-    {
+    private LayoutParams buildTipLayoutParams(View view, HighLight.ViewPosInfo viewPosInfo) {
         LayoutParams lp = (LayoutParams) view.getLayoutParams();
         if (lp.leftMargin == (int) viewPosInfo.marginInfo.leftMargin &&
                 lp.topMargin == (int) viewPosInfo.marginInfo.topMargin &&
@@ -171,8 +157,7 @@ public class HightLightView extends FrameLayout
         lp.rightMargin = (int) viewPosInfo.marginInfo.rightMargin;
         lp.bottomMargin = (int) viewPosInfo.marginInfo.bottomMargin;
 
-        if (lp.leftMargin == 0 && lp.topMargin == 0)
-        {
+        if (lp.leftMargin == 0 && lp.topMargin == 0) {
             lp.gravity = Gravity.RIGHT | Gravity.BOTTOM;
         }
         return lp;
@@ -180,8 +165,7 @@ public class HightLightView extends FrameLayout
 
 
     @Override
-    protected void onDraw(Canvas canvas)
-    {
+    protected void onDraw(Canvas canvas) {
 
         canvas.drawBitmap(mMaskBitmap, 0, 0, null);
         super.onDraw(canvas);
