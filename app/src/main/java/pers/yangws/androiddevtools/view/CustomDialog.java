@@ -17,8 +17,8 @@ public class CustomDialog {
 	
 	public static WindowManager.LayoutParams getDefaultLayoutParams(){
 		 WindowManager.LayoutParams sysParams= new WindowManager.LayoutParams();
-		 
-         owManager.LayoutParams params = sysParams;
+
+		 WindowManager.LayoutParams params = sysParams;
          params.height = WindowManager.LayoutParams.WRAP_CONTENT;
          params.width = WindowManager.LayoutParams.WRAP_CONTENT;
          params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
@@ -55,7 +55,7 @@ public class CustomDialog {
 	 * 开启自定义Toast
 	 * @param context 上下文对象
 	 * @param view 自定义布局
-	 * @param 显示参数
+	 * @param mParams 显示参数
 	 * */
 	public static void automaticToastShow(Context context, View view, WindowManager.LayoutParams mParams){
 		WindowManager.LayoutParams sysParams = mParams != null ? mParams : getDefaultLayoutParams();
