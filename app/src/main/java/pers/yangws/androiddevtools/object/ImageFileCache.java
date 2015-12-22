@@ -1,12 +1,20 @@
-package pers.yangws.androiddevtools.object;/**
- * Created by Thinkpad on 2015/12/20.
- * <p>
- * 公司:
- * </p>
- * <p>
- * 描述:
- * </p>
- */
+package pers.yangws.androiddevtools.object;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
+import android.os.StatFs;
+import android.util.Log;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.Comparator;
+
+
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -79,7 +87,7 @@ public class ImageFileCache {
             else
             {
                 updateFileTime(path);
-                Log.d(TAG , "get bmp from FileCache,url=" + url);
+                Log.d(TAG, "get bmp from FileCache,url=" + url);
                 return bmp;
             }
         }
