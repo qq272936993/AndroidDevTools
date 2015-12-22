@@ -1,4 +1,4 @@
-package pers.yangws.androiddevtools.object;
+package pers.yangws.androiddevtools.model.bean;
 
 import android.app.Activity;
 import android.content.Context;

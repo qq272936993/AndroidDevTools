@@ -22,7 +22,7 @@ import android.widget.FrameLayout;
 
 import java.util.List;
 
-import pers.yangws.androiddevtools.object.HighLight;
+import pers.yangws.androiddevtools.model.bean.HighLight;
 
 /**
  * <pre>

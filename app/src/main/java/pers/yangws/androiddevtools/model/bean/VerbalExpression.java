@@ -1,8 +1,5 @@
-package pers.yangws.androiddevtools.object;
+package pers.yangws.androiddevtools.model.bean;
 
-
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 
 import static java.lang.String.valueOf;
 
