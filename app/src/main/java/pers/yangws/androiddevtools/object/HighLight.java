@@ -11,7 +11,6 @@ package pers.yangws.androiddevtools.object;/**
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.RectF;
-import android.support.v7.internal.widget.ViewUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
