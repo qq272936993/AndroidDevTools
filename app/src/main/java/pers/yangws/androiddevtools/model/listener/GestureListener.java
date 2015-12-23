@@ -1,7 +1,7 @@
 package pers.yangws.androiddevtools.model.listener;
 
 /**
- * Created by 1yyg-安卓 on 2015/12/23.
+ * Created by 杨文松 on 2015/12/23.
  *
  * 手势监听
  * */

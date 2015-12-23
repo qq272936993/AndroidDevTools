@@ -9,7 +9,7 @@ import pers.yangws.androiddevtools.helper.ViewHelper;
 import pers.yangws.androiddevtools.model.listener.GestureListener;
 
 /**
- * Created by 1yyg-安卓 on 2015/12/23.
+ * Created by 杨文松 on 2015/12/23.
  * 手势意图
  */
 public class GestureDetectorIntent {
