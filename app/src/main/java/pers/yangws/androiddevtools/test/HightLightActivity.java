@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 
 import pers.yangws.androiddevtools.R;
@@ -25,7 +26,9 @@ public class HightLightActivity extends Activity implements GestureListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gestureDetectorIntent = new GestureDetectorIntent(this , this);
+        View view = findViewById(R.id.tv);
+
+        gestureDetectorIntent = new GestureDetectorIntent(this , this ,view);
     }
 
     @Override
