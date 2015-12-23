@@ -33,7 +33,7 @@ public class SharedPerferenceHelper {
             } else {
                 StringBuffer buffer = new StringBuffer();
                 for (String val : defValues) {
-                    buffer.append(val).append(Constants.CHAT_TEXT_LEFT_BRACKETS_TAG);
+                    buffer.append(val).append(Constants.SpecialChar.CHAT_TEXT_LEFT_BRACKETS_TAG);
                 }
                 sp.edit().putString(key, buffer.toString()).commit();
             }
@@ -57,7 +57,7 @@ public class SharedPerferenceHelper {
                 String val = sp.getString(key, null);
                 if (val == null) return null;
                 else {
-                    String[] vals = val.split(Constants.CHAT_TEXT_LEFT_BRACKETS_TAG);
+                    String[] vals = val.split(Constants.SpecialChar.CHAT_TEXT_LEFT_BRACKETS_TAG);
                     return new HashSet<String>(Arrays.asList(vals));
                 }
             }

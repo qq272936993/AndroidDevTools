@@ -35,20 +35,7 @@ public class CustomDialog {
 		throw new RuntimeException("don't create this Class");
 	}
 	
-	public static void showToast(final Context context ,final String text){
-		//1.判断是否为主线程
-		if(BasisApplication.getMainThread().equals(Thread.currentThread())){
-			Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
-		}else{
-			BasisApplication.getMainThreadHandler().post(new Runnable() {
-				
-				@Override
-				public void run() {
-					Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
-				}
-			});
-		}
-	}
+
 	
 	
 	/**
