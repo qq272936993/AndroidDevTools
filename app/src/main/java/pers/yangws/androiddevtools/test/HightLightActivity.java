@@ -32,7 +32,7 @@ public class HightLightActivity extends Activity implements GestureListener {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        gestureDetectorIntent.onEvent(event);
+        //gestureDetectorIntent.onEvent(event);
         return super.onTouchEvent(event);
     }
 
