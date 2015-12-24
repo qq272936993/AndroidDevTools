@@ -89,6 +89,7 @@ public abstract class BasisExpandaListAdapter<E, T> extends BaseExpandableListAd
                              View convertView, ViewGroup parent) {
         if (convertView != null) {
             mGroupHolder = (BaseHolder<E>) convertView.getTag();
+            mGroupHolder.bindView();
         } else {
             mGroupHolder = getGroupHolder(groupPosition, isExpanded, convertView, parent);
         }
@@ -104,6 +105,7 @@ public abstract class BasisExpandaListAdapter<E, T> extends BaseExpandableListAd
                              boolean isLastChild, View convertView, ViewGroup parent) {
         if (convertView != null) {
             mChildHolder = (BaseHolder<T>) convertView.getTag();
+            mChildHolder.bindView();
         } else {
             mChildHolder = getChildHolder(groupPosition, childPosition, isLastChild, convertView, parent);
         }

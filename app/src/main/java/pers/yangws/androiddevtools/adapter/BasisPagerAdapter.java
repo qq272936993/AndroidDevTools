@@ -8,10 +8,12 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
+import pers.yangws.androiddevtools.holder.BaseHolder;
+
 public abstract class BasisPagerAdapter<T> extends PagerAdapter {
 
     protected List<T> mData;
-    protected Context mContext;
+    public Context mContext;
 
     public BasisPagerAdapter(Context context, List<T> data) {
         this.mContext = context;
@@ -59,7 +61,12 @@ public abstract class BasisPagerAdapter<T> extends PagerAdapter {
      *
      * @param position 坐标
      */
-    public abstract View getView(int position);
+    public View getView(int position){
+        BaseHolder<T> holder = getHolder(position);
+        holder.setData(mData.get(position));
+        return holder.getRootView();
+    }
 
+    public abstract BaseHolder<T> getHolder(int position);
 
 }

@@ -64,6 +64,7 @@ public abstract class BasisListViewAdapter<T> extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView != null) {
             holder = (BaseHolder<T>) convertView.getTag();
+            holder.bindView();
         } else {
             holder = getHolder();
         }
