@@ -1,11 +1,11 @@
 package pers.yangws.androiddevtools.model.bean;
 
-import java.lang.ref.SoftReference;
-import java.util.LinkedHashMap;
-
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 import android.util.Log;
+
+import java.lang.ref.SoftReference;
+import java.util.LinkedHashMap;
 
 
 /**
