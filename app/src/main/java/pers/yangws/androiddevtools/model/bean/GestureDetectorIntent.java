@@ -5,7 +5,7 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 
-import pers.yangws.androiddevtools.helper.ViewHelper;
+import pers.yangws.androiddevtools.helper.app.ViewHelper;
 import pers.yangws.androiddevtools.model.listener.GestureListener;
 
 /**

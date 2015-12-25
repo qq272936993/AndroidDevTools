@@ -1,4 +1,4 @@
-package pers.yangws.androiddevtools.helper;
+package pers.yangws.androiddevtools.helper.app;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

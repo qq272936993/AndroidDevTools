@@ -1,10 +1,11 @@
-package pers.yangws.androiddevtools.helper;
+package pers.yangws.androiddevtools.helper.app;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 import pers.yangws.androiddevtools.Constants;
+import pers.yangws.androiddevtools.application.BasisApplication;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -25,7 +26,8 @@ public class SharedPerferenceHelper {
      * @param key 键值
      * @param defValues 默认值
      * */
-    public static void putStringSet(SharedPreferences sp, String key, Set<String> defValues) {
+    public static void putStringSet( String key, Set<String> defValues) {
+        SharedPreferences sp = BasisApplication.getSharePaPreferences();
         if (sp != null && !TextUtils.isEmpty(key) && defValues != null && !defValues.isEmpty()) {
             int sdkVersion = Integer.valueOf(android.os.Build.VERSION.SDK);
             if (sdkVersion >= 11) {
@@ -48,7 +50,8 @@ public class SharedPerferenceHelper {
      * @param sp SharedPerference
      * @param key 键值
      * */
-    public static Set<String> getStringSet(SharedPreferences sp, String key) {
+    public static Set<String> getStringSet(String key) {
+        SharedPreferences sp = BasisApplication.getSharePaPreferences();
         if (sp != null && !TextUtils.isEmpty(key)) {
             int sdkVersion = Integer.valueOf(android.os.Build.VERSION.SDK);
             if (sdkVersion >= 11) {

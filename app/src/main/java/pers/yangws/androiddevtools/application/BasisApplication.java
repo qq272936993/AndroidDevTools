@@ -30,12 +30,26 @@ public class BasisApplication extends Application {
     private static Handler mMainThreadHandler;
     //获取到主线程的looper
     private static Looper mMainThreadLooper;
-    //获取到主线程的上下文
+    /**
+     * 获取到主线程的上下文
+     * 只用Application级别的Context时需要注意,凡事涉及到UI方面的上下文都不能使用该Context
+     *        否则会引起错误.
+     * 若只是数据操作相关的,完全可以使用.相关的请查看博文:
+     *      http://blog.csdn.net/singwhatiwanna/article/details/21829971
+     * */
     private static BasisApplication mContext;
     //获取到主线程的id
     private static int mMainTheadId;
-
+    /**
+     * SharedPreferences
+     * */
     private static SharedPreferences mSp;
+
+    /**
+     * greenDao数据库DaoMaster对象
+     * */
+//    public static DaoMater EventBus;
+
 
 
     @Override

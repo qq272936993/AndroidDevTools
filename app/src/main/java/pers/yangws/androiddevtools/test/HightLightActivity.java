@@ -3,11 +3,10 @@ package pers.yangws.androiddevtools.test;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Button;
 
 import pers.yangws.androiddevtools.R;
-import pers.yangws.androiddevtools.helper.PromptHelper;
+import pers.yangws.androiddevtools.helper.app.PromptHelper;
 import pers.yangws.androiddevtools.model.bean.GestureDetectorIntent;
 import pers.yangws.androiddevtools.model.listener.GestureListener;
 

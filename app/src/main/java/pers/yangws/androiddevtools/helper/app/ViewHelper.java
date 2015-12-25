@@ -1,4 +1,4 @@
-package pers.yangws.androiddevtools.helper;
+package pers.yangws.androiddevtools.helper.app;
 
 import android.app.Activity;
 import android.content.Context;

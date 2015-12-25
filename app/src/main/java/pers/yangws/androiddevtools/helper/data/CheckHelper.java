@@ -1,7 +1,7 @@
 /**
  *
  */
-package pers.yangws.androiddevtools.helper;
+package pers.yangws.androiddevtools.helper.data;
 
 import android.text.TextUtils;
 

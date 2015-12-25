@@ -22,4 +22,9 @@ public @interface Field {
     public String mappname();
 
 
+    /**
+     * 长度
+     * */
+    public int length();
+
 }
