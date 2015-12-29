@@ -70,6 +70,17 @@ public class FileHelper {
         }
         return isSave;
     }
+    
+    
+    /**
+     * 移动文件
+     * @param srcFile
+     * @param targetFile
+     * */
+    public void moveFile(File srcFile, File targetFile){
+        
+    }
+    
 
 
     /**

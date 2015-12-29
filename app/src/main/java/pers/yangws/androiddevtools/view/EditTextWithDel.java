@@ -1,4 +1,4 @@
-package pers.yangws.androiddevtools.androiddevtools.view;
+package pers.yangws.androiddevtools.view;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -19,12 +19,10 @@ public class EditTextWithDel extends EditText {
 
     public EditTextWithDel(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        // TODO Auto-generated constructor stub
     }
 
     public EditTextWithDel(Context context, AttributeSet attrs) {
         super(context, attrs);
-        // TODO Auto-generated constructor stub
     }
 
     public EditTextWithDel(Context context) {
