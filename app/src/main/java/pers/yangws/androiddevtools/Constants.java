@@ -69,4 +69,15 @@ public class Constants {
     }
 
 
+    /**
+     * 数据库操作常量
+     * */
+    public static class DB{
+
+        public final static String DEFAULT_DB ="default.db";
+
+    }
+
+
+
 }

@@ -11,9 +11,13 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
 allprojects {
     repositories {
         jcenter()
+    }
+    group 'com.makeramen'
+    version '1.0.0'
+    repositories {
+        mavenCentral()
     }
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import pers.yangws.androiddevtools.Constants;
+import pers.yangws.androiddevtools.dao.DaoMaster;
 
 import android.app.Activity;
 import android.app.Application;
@@ -48,13 +49,15 @@ public class BasisApplication extends Application {
     /**
      * greenDao数据库DaoMaster对象
      * */
-//    public static DaoMater EventBus;
+    public static DaoMaster mDaoMaster;
 
-
+    public final static Object lock = new Object();
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if(mContext != null) return;
 
         mContext = this;
         mOpenActivitys = new HashMap<String, List<Activity>>();
@@ -70,7 +73,46 @@ public class BasisApplication extends Application {
         mSp = getSharedPreferences(Constants.Sp.SP_NAME, Context.MODE_PRIVATE);
 
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionFilterHandler());
+
+
     }
+
+    /**
+     * 获取DaoMaster对象
+     * @param context 上下文对象
+     * */
+    public static DaoMaster getDaoMater(Context context){
+        if(mDaoMaster == null){
+            synchronized (lock){
+                if(mDaoMaster == null){
+                    DaoMaster.DevOpenHelper helper  = new DaoMaster.DevOpenHelper(context, Constants.DB.DEFAULT_DB, null);
+
+                    mDaoMaster = new DaoMaster(helper.getWritableDatabase());
+                }
+            }
+        }
+        return mDaoMaster;
+    }
+
+    /**
+     * 获取DaoMaster对象
+     * @param context 上下文对象
+     * @param db 数据库文件
+     * */
+    public static DaoMaster getDaoMaster(Context context,String db){
+        if(mDaoMaster == null){
+            synchronized (lock){
+                if(mDaoMaster == null){
+                    DaoMaster.DevOpenHelper helper  = new DaoMaster.DevOpenHelper(context, db, null);
+
+                    mDaoMaster = new DaoMaster(helper.getWritableDatabase());
+                }
+            }
+        }
+        return mDaoMaster;
+    }
+
+
 
 
     /**
